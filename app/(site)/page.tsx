@@ -62,17 +62,19 @@ export default async function HomePage() {
               <h1 className="font-display text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8 max-w-4xl">
                 {featuredArticle.title}
               </h1>
-              {featuredArticle.excerpt && (
-                <p className="font-body text-white/75 max-w-sm text-lg font-medium leading-snug mb-10">
-                  {featuredArticle.excerpt}
-                </p>
-              )}
-              <Link
-                href={`/news/${featuredArticle.slug.current}`}
-                className="inline-flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-full font-display font-bold text-base uppercase tracking-widest hover:bg-primary-dim transition-all shadow-2xl"
-              >
-                Read Article
-              </Link>
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
+                <Link
+                  href={`/news/${featuredArticle.slug.current}`}
+                  className="shrink-0 inline-flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-full font-display font-bold text-base uppercase tracking-widest hover:bg-primary-dim transition-all shadow-2xl"
+                >
+                  Read Article
+                </Link>
+                {featuredArticle.excerpt && (
+                  <p className="font-body text-white/75 max-w-sm text-lg font-medium leading-snug">
+                    {featuredArticle.excerpt}
+                  </p>
+                )}
+              </div>
             </>
           ) : (
             <h1 className="font-display text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8 max-w-4xl">
