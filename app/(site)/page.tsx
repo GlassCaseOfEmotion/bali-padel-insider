@@ -16,12 +16,12 @@ export const revalidate = 60
 export default async function HomePage() {
   const [homepage, latestArticles, upcomingEvents] = await Promise.all([
     client.fetch(homepageQuery),
-    client.fetch(latestArticlesQuery, { limit: 6 }),
-    client.fetch(upcomingEventsQuery, { limit: 3 }),
+    client.fetch(latestArticlesQuery, { limit: 5 }),
+    client.fetch(upcomingEventsQuery, { limit: 2 }),
   ])
 
   return (
-    <main>
+    <>
       {/* Hero */}
       {homepage?.featuredArticle && (
         <section className="px-4 sm:px-6 lg:px-8 pt-8 pb-16 max-w-7xl mx-auto">
@@ -114,7 +114,7 @@ export default async function HomePage() {
                 View all →
               </Link>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {homepage.featuredPlayers.map((player: { slug: { current: string }; photo?: SanityImageSource; name: string; currentRanking?: number }) => (
                 <Link
                   key={player.slug.current}
@@ -135,7 +135,7 @@ export default async function HomePage() {
                     {player.name}
                   </p>
                   {player.currentRanking && (
-                    <p className="font-body text-xs text-on-surface-muted mt-0.5">#{player.currentRanking}</p>
+                    <span className="inline-block font-body text-xs font-semibold text-primary mt-0.5">#{player.currentRanking}</span>
                   )}
                 </Link>
               ))}
@@ -143,6 +143,6 @@ export default async function HomePage() {
           </div>
         </section>
       )}
-    </main>
+    </>
   )
 }
