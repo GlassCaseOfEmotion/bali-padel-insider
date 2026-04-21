@@ -13,6 +13,12 @@
   --color-on-surface: #3a3216;
   --color-on-surface-muted: #7a6b52;
   --color-on-primary: #ffffff;
+  --color-tertiary-container: #d4ff00;
+  --color-on-tertiary-container: #4e5f00;
+  --color-on-tertiary: #f3ffc2;
+  --color-inverse-surface: #120e03;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-surface-variant: #685f3e;
 
   /* Typography */
   --font-display: var(--font-lexend), sans-serif;
