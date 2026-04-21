@@ -49,8 +49,18 @@ export const allEventsQuery = `
 
 export const eventBySlugQuery = `
   *[_type == "event" && slug.current == $slug][0] {
-    title, slug, date, eventType, coverImage, description,
-    "venue": venue->{ name, slug, location }
+    title, slug, date, endDate, eventType, level, excerpt, coverImage, description,
+    registrationUrl, bracketUrl, registrationDeadline,
+    prizePool,
+    schedule[] { phase, datetime, isFeatured },
+    sponsors,
+    shuttleInfo, conciergeEmail,
+    "venue": venue->{
+      name, slug,
+      "address": location.address,
+      "lat": location.lat,
+      "lng": location.lng
+    }
   }
 `
 
@@ -66,8 +76,18 @@ export const allInterviewsQuery = `
 export const interviewBySlugQuery = `
   *[_type == "interview" && slug.current == $slug][0] {
     title, slug, publishedAt, coverImage, body,
+    category, readTime, excerpt, pullQuote,
+    ctaTitle, ctaBody, ctaUrl,
     "videoPlaybackId": video.asset->playbackId,
-    "subject": subject->{ name, slug, photo }
+    "subject": subject->{
+      name, slug,
+      racket, racketImage, racketDescription, racketUrl,
+      shoes, shoesImage, shoesDescription, shoesUrl
+    },
+    "related": *[_type == "interview" && slug.current != $slug] | order(publishedAt desc) [0..2] {
+      title, slug, coverImage, category,
+      "subject": subject->{ name }
+    }
   }
 `
 
