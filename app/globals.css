@@ -1,6 +1,29 @@
 @import "tailwindcss";
 
+@theme {
+  /* Colors — Tropical Kineticism */
+  --color-primary: #066d40;
+  --color-primary-dim: #054f2e;
+  --color-secondary: #914d00;
+  --color-tertiary: #546600;
+  --color-surface: #fff8ef;
+  --color-surface-container: #f5eddf;
+  --color-surface-container-high: #ecdecf;
+  --color-on-surface: #3a3216;
+  --color-on-surface-muted: #7a6b52;
+  --color-on-primary: #ffffff;
+
+  /* Typography */
+  --font-display: var(--font-lexend), sans-serif;
+  --font-body: var(--font-manrope), sans-serif;
+
+  /* Border radius */
+  --radius-card: 2rem;
+  --radius-btn: 3rem;
+  --radius-sm: 1rem;
+}
+
 body {
-  background: #ffffff;
-  color: #171717;
+  background: var(--color-surface);
+  color: var(--color-on-surface);
 }
