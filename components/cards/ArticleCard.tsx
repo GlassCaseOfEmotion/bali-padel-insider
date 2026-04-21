@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import type { SanityImageSource } from '@sanity/image-url'
 import { urlFor } from '@/sanity/lib/urlFor'
 
 interface Article {
   title: string
   slug: { current: string }
   excerpt?: string
-  coverImage?: unknown
+  coverImage?: SanityImageSource | null
   publishedAt?: string
   category?: string
   authorName?: string

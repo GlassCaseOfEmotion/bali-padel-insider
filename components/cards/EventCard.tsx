@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import type { SanityImageSource } from '@sanity/image-url'
 import { urlFor } from '@/sanity/lib/urlFor'
 
 interface Event {
@@ -7,7 +8,7 @@ interface Event {
   slug: { current: string }
   date?: string
   eventType?: string
-  coverImage?: unknown
+  coverImage?: SanityImageSource | null
   venue?: { name: string; slug: { current: string } }
 }
 

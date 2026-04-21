@@ -25,4 +25,9 @@ describe('EventCard', () => {
     render(<EventCard event={mockEvent} />)
     expect(screen.getByRole('link')).toHaveAttribute('href', '/events/bali-padel-open-2026')
   })
+
+  it('renders the formatted event date', () => {
+    render(<EventCard event={mockEvent} />)
+    expect(screen.getByText('15 June 2026')).toBeInTheDocument()
+  })
 })
