@@ -81,10 +81,16 @@ export const allPlayersQuery = `
 
 export const playerBySlugQuery = `
   *[_type == "player" && slug.current == $slug][0] {
-    name, slug, photo, currentRanking, nationality, bio,
+    name, slug, photo, currentRanking, nationality, bio, tier,
+    winRate, matchesPlayed, smashPower, titles, isClubMvp,
+    recentResults[] { tournamentName, opponent, score, isWin },
+    islandMindsetQ1, islandMindsetA1, islandMindsetQ2, islandMindsetA2,
     preMatchRitual, secretTalent, favouritePlaylist, recoveryRoutine,
     racket, shoes, grip, bag,
-    "homeClub": homeClub->{ name, slug }
+    "homeClub": homeClub->{ name, slug },
+    "interviews": *[_type == "interview" && references(^._id)] | order(publishedAt desc) [0..2] {
+      title, slug, coverImage, excerpt
+    }
   }
 `
 
