@@ -64,7 +64,7 @@ export default async function EventPage({ params }: Props) {
     <main className="overflow-x-hidden">
 
       {/* ── HERO ── */}
-      <section className="relative min-h-[600px] md:min-h-[870px] flex items-center px-4 sm:px-6 md:px-16 py-20">
+      <section className="relative min-h-[600px] md:min-h-[870px] flex items-center py-20">
         <div className="absolute inset-0 z-0">
           {event.coverImage ? (
             <Image
@@ -80,7 +80,8 @@ export default async function EventPage({ params }: Props) {
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
         </div>
 
-        <div className="relative z-10 max-w-4xl">
+        <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16 w-full">
+        <div className="max-w-4xl">
           {event.eventType && (
             <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 md:mb-8 font-body text-xs font-bold uppercase tracking-widest ${typeBadgeClass}`}>
               ★ {event.eventType}
@@ -147,12 +148,13 @@ export default async function EventPage({ params }: Props) {
             )}
           </div>
         </div>
+        </div>
       </section>
 
       {/* ── BENTO GRID: PRIZE POOL + COUNTDOWN + SCHEDULE ── */}
       {(hasPrizePool || hasSchedule || event.registrationDeadline) && (
-        <section className="py-16 md:py-24 px-4 sm:px-6 md:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 max-w-[1440px] mx-auto">
+        <section className="py-16 md:py-24">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16">
 
             {/* Prize Pool */}
             {hasPrizePool && (
@@ -288,8 +290,8 @@ export default async function EventPage({ params }: Props) {
 
       {/* ── LOCATION ── */}
       {hasLocation && (
-        <section className="py-16 md:py-24 px-4 sm:px-6 md:px-16">
-          <div className="max-w-[1440px] mx-auto">
+        <section className="py-16 md:py-24">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
               <div>
                 <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-8">

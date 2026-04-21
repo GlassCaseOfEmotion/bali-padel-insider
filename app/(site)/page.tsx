@@ -47,7 +47,7 @@ export default async function HomePage() {
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#120e03]/90 via-[#120e03]/30 to-transparent" />
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-8 pb-20 pt-36">
+        <div className="relative z-10 max-w-[1440px] mx-auto w-full px-4 sm:px-6 md:px-16 pb-20 pt-36">
           {/* Live badge */}
           <div className="inline-flex items-center gap-3 bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full mb-8 font-body font-bold text-sm uppercase tracking-wider">
             <span className="relative flex h-3 w-3">
@@ -84,7 +84,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <main className="max-w-[1440px] mx-auto px-6 lg:px-8 py-20 space-y-24">
+      <main className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16 py-20 space-y-24">
 
         {/* ── RANKINGS + NEWS BENTO ── */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-8">

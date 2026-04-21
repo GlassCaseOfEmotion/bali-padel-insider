@@ -51,7 +51,8 @@ export default async function PlayersPage() {
             <h2 className="font-headline text-4xl font-black tracking-tight text-on-surface">The Elite Top 5</h2>
             <p className="font-body text-on-surface/60 font-medium uppercase tracking-widest text-sm mt-2">Bali Season Rankings</p>
           </div>
-          <div className="flex gap-6 overflow-x-auto px-4 sm:px-6 md:px-16 pb-8" style={{ scrollbarWidth: 'none' }}>
+          <div className="max-w-[1440px] mx-auto overflow-x-auto">
+          <div className="flex gap-6 px-4 sm:px-6 md:px-16 pb-8" style={{ scrollbarWidth: 'none' }}>
             {top5.map((player) => {
               const flagCode = player.nationality ? nationalityCode(player.nationality) : ''
               return (
@@ -102,6 +103,7 @@ export default async function PlayersPage() {
                 </Link>
               )
             })}
+          </div>
           </div>
         </section>
       )}
