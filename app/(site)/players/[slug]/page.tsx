@@ -46,10 +46,10 @@ const OFF_COURT_LABELS: Record<string, string> = {
 }
 
 const BAG_ITEMS = [
-  { key: 'racket', label: 'Racket' },
-  { key: 'shoes', label: 'Footwear' },
-  { key: 'grip', label: 'Grip' },
-  { key: 'bag', label: 'The Bag' },
+  { key: 'racket', urlKey: 'racketUrl', label: 'Racket' },
+  { key: 'shoes', urlKey: 'shoesUrl', label: 'Footwear' },
+  { key: 'grip', urlKey: 'gripUrl', label: 'Grip' },
+  { key: 'bag', urlKey: 'bagUrl', label: 'The Bag' },
 ] as const
 
 export default async function PlayerPage({ params }: Props) {
@@ -65,8 +65,10 @@ export default async function PlayerPage({ params }: Props) {
     .filter((item) => item.value)
 
   const inMyBag = BAG_ITEMS
-    .map((item) => ({ ...item, value: player[item.key] }))
+    .map((item) => ({ ...item, value: player[item.key], url: player[item.urlKey] ?? null }))
     .filter((item) => item.value)
+
+  const partners: { name: string; url?: string }[] = player.partners ?? []
 
   const recentResults: RecentResult[] = player.recentResults ?? []
   const interviews: Interview[] = player.interviews ?? []
@@ -406,27 +408,62 @@ export default async function PlayerPage({ params }: Props) {
             <div className="relative z-10">
               <h2 className="font-headline text-5xl font-black tracking-tighter mb-16">IN MY BAG</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                {inMyBag.map(({ key, label, value }, index) => (
-                  <div key={key} className={`space-y-6 ${index % 2 === 1 ? 'lg:mt-12' : ''}`}>
-                    <div className="aspect-square bg-surface-container rounded-[1.5rem] flex items-center justify-center p-8">
-                      <span className="font-headline font-black text-4xl text-primary/30">{label[0]}</span>
+                {inMyBag.map(({ key, label, value, url }, index) => {
+                  const inner = (
+                    <>
+                      <div className="aspect-square bg-surface-container rounded-[1.5rem] flex items-center justify-center p-8 transition-colors group-hover:bg-primary-container">
+                        <span className="font-headline font-black text-4xl text-primary/30">{label[0]}</span>
+                      </div>
+                      <div>
+                        <p className="font-body text-xs uppercase tracking-widest font-bold text-primary mb-1 flex items-center gap-2">
+                          {label}
+                          {url && <span className="text-primary/40 text-[10px] font-normal normal-case tracking-normal">→ buy</span>}
+                        </p>
+                        <h4 className="font-headline font-bold text-xl">{value}</h4>
+                      </div>
+                    </>
+                  )
+                  return url ? (
+                    <a
+                      key={key}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`space-y-6 group ${index % 2 === 1 ? 'lg:mt-12' : ''}`}
+                    >
+                      {inner}
+                    </a>
+                  ) : (
+                    <div key={key} className={`space-y-6 ${index % 2 === 1 ? 'lg:mt-12' : ''}`}>
+                      {inner}
                     </div>
-                    <div>
-                      <p className="font-body text-xs uppercase tracking-widest font-bold text-primary mb-1">{label}</p>
-                      <h4 className="font-headline font-bold text-xl">{value}</h4>
-                    </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
 
               {/* Official Partners strip */}
-              <div className="mt-20 pt-10 border-t border-outline-variant/30 flex flex-wrap items-center gap-12 grayscale opacity-50">
-                <p className="font-body text-xs font-black uppercase tracking-[0.4em]">Official Partners</p>
-                <span className="font-headline text-2xl font-bold">VORTEX</span>
-                <span className="font-headline text-2xl font-bold">ISLAND HYDRATION</span>
-                <span className="font-headline text-2xl font-bold">BALI TECH</span>
-                <span className="font-headline text-2xl font-bold">KINETIX</span>
-              </div>
+              {partners.length > 0 && (
+                <div className="mt-20 pt-10 border-t border-outline-variant/30 flex flex-wrap items-center gap-12">
+                  <p className="font-body text-xs font-black uppercase tracking-[0.4em] text-on-surface-variant/40">Official Partners</p>
+                  {partners.map(({ name, url }) =>
+                    url ? (
+                      <a
+                        key={name}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-headline text-2xl font-bold text-on-surface/30 hover:text-on-surface/60 transition-colors"
+                      >
+                        {name}
+                      </a>
+                    ) : (
+                      <span key={name} className="font-headline text-2xl font-bold text-on-surface/30">
+                        {name}
+                      </span>
+                    )
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </section>

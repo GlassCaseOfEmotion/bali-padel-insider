@@ -84,8 +84,30 @@ export const player = defineType({
 
     // In My Bag
     defineField({ name: 'racket', type: 'string', group: 'inMyBag' }),
+    defineField({ name: 'racketUrl', title: 'Racket — Buy Link', type: 'url', group: 'inMyBag' }),
     defineField({ name: 'shoes', type: 'string', group: 'inMyBag' }),
+    defineField({ name: 'shoesUrl', title: 'Shoes — Buy Link', type: 'url', group: 'inMyBag' }),
     defineField({ name: 'grip', type: 'string', group: 'inMyBag' }),
+    defineField({ name: 'gripUrl', title: 'Grip — Buy Link', type: 'url', group: 'inMyBag' }),
     defineField({ name: 'bag', type: 'string', group: 'inMyBag' }),
+    defineField({ name: 'bagUrl', title: 'Bag — Buy Link', type: 'url', group: 'inMyBag' }),
+
+    // Official Partners
+    defineField({
+      name: 'partners',
+      title: 'Official Partners',
+      type: 'array',
+      group: 'inMyBag',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({ name: 'name', type: 'string' }),
+            defineField({ name: 'url', type: 'url' }),
+          ],
+          preview: { select: { title: 'name', subtitle: 'url' } },
+        },
+      ],
+    }),
   ],
 })
