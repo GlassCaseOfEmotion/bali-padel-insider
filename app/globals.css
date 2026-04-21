@@ -8,8 +8,9 @@
   --color-secondary: #914d00;
   --color-tertiary: #546600;
   --color-surface: #fff8ef;
-  --color-surface-container: #f5eddf;
-  --color-surface-container-high: #ecdecf;
+  --color-surface-container-low: #fef3d6;
+  --color-surface-container: #f9edcc;
+  --color-surface-container-high: #f4e8c3;
   --color-on-surface: #3a3216;
   --color-on-surface-muted: #7a6b52;
   --color-on-primary: #ffffff;

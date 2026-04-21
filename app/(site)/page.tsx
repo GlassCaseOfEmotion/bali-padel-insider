@@ -69,7 +69,7 @@ export default async function HomePage() {
               )}
               <Link
                 href={`/news/${featuredArticle.slug.current}`}
-                className="inline-flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-[1rem] font-display font-bold text-base uppercase tracking-widest hover:bg-primary-dim transition-all shadow-2xl"
+                className="inline-flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-full font-display font-bold text-base uppercase tracking-widest hover:bg-primary-dim transition-all shadow-2xl"
               >
                 Read Article
               </Link>
@@ -133,7 +133,7 @@ export default async function HomePage() {
               </div>
               <Link
                 href="/rankings"
-                className="w-full mt-8 py-4 font-display font-bold uppercase tracking-widest text-primary flex items-center justify-center rounded-[1rem] bg-surface-container-lowest/50 hover:bg-surface-container-lowest transition-colors text-sm"
+                className="w-full mt-8 py-4 font-display font-bold uppercase tracking-widest text-primary flex items-center justify-center rounded-full bg-surface-container-lowest/50 hover:bg-surface-container-lowest transition-colors text-sm"
               >
                 View Full Leaderboard
               </Link>
@@ -246,7 +246,7 @@ export default async function HomePage() {
               <div className="flex items-center gap-8 mt-4">
                 <Link
                   href={`/interviews/${featuredInterview.slug.current}`}
-                  className="bg-primary text-on-primary px-8 py-4 rounded-[1rem] font-display font-bold uppercase tracking-widest hover:scale-105 transition-transform inline-block"
+                  className="bg-primary text-on-primary px-8 py-4 rounded-full font-display font-bold uppercase tracking-widest hover:bg-primary-dim transition-colors inline-block"
                 >
                   Read Interview
                 </Link>

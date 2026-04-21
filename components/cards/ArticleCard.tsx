@@ -17,7 +17,7 @@ export function ArticleCard({ article }: { article: Article }) {
   return (
     <Link
       href={`/news/${article.slug.current}`}
-      className="group block rounded-[2rem] overflow-hidden bg-surface-container shadow-[0_8px_40px_rgba(58,50,22,0.06)] hover:scale-[1.02] hover:shadow-[0_16px_60px_rgba(58,50,22,0.10)] transition-all duration-300"
+      className="group block rounded-[2rem] overflow-hidden bg-surface-container-low shadow-[0_8px_40px_rgba(58,50,22,0.06)] hover:scale-[1.02] hover:shadow-[0_16px_60px_rgba(58,50,22,0.10)] transition-all duration-300"
     >
       {article.coverImage && (
         <div className="relative h-52 w-full overflow-hidden">
