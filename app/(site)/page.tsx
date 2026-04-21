@@ -9,7 +9,7 @@ import { urlFor } from '@/sanity/lib/urlFor'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { SanityImageSource } from '@sanity/image-url'
-import { nationalityFlag } from '@/lib/flags'
+import { nationalityCode } from '@/lib/flags'
 
 export const revalidate = 60
 
@@ -111,9 +111,18 @@ export default async function HomePage() {
                       <div>
                         <p className="font-display font-bold text-on-surface">{entry.player.name}</p>
                         {entry.player.nationality && (
-                          <p className="font-body text-xs uppercase tracking-widest text-on-surface-variant font-bold flex items-center gap-1">
-                            <span>{nationalityFlag(entry.player.nationality)}</span>
+                          <p className="font-body text-xs uppercase tracking-widest text-on-surface-variant font-bold flex items-center gap-1.5">
                             <span>{entry.player.nationality}</span>
+                            {nationalityCode(entry.player.nationality) && (
+                              // eslint-disable-next-line @next/next/no-img-element
+                              <img
+                                src={`https://flagcdn.com/16x12/${nationalityCode(entry.player.nationality)}.png`}
+                                width={16}
+                                height={12}
+                                alt={entry.player.nationality}
+                                className="inline-block rounded-[2px]"
+                              />
+                            )}
                           </p>
                         )}
                       </div>
