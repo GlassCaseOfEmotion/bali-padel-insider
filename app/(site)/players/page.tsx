@@ -27,7 +27,7 @@ export default async function PlayersPage() {
   return (
     <>
       {/* ── HERO ── */}
-      <header className="relative w-full min-h-[480px] flex items-center overflow-hidden">
+      <header className="relative w-full min-h-[480px] flex items-center overflow-hidden pt-12">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-surface-container-low via-surface to-surface-container" />
         <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16 w-full py-20">
           <div className="max-w-2xl">

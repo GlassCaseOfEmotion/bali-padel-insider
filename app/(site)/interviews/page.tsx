@@ -25,12 +25,13 @@ export default async function InterviewsPage() {
   const gridInterviews = interviews.slice(1)
 
   return (
-    <main className="flex-grow pt-8">
+    <main className="flex-grow pt-12 pb-32">
 
       {/* ── HERO: FEATURED VIDEO ── */}
       {featuredInterview && (
-        <section className="px-4 sm:px-6 md:px-16 pb-12">
-          <div className="max-w-[1440px] mx-auto relative group overflow-hidden rounded-[2rem] bg-surface-container-highest aspect-[21/9]">
+        <section className="pb-12">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16">
+          <div className="relative group overflow-hidden rounded-[2rem] bg-surface-container-highest aspect-[21/9]">
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
             {featuredInterview.coverImage ? (
               <Image
@@ -67,12 +68,13 @@ export default async function InterviewsPage() {
               )}
             </div>
           </div>
+          </div>
         </section>
       )}
 
       {/* ── CATEGORY FILTERS (static) ── */}
-      <section className="px-4 sm:px-6 md:px-16 pb-12 overflow-x-auto">
-        <div className="max-w-[1440px] mx-auto flex gap-4">
+      <section className="pb-12 overflow-x-auto">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16 flex gap-4">
           <span className="bg-primary text-on-primary px-8 py-3 rounded-full font-headline font-bold whitespace-nowrap shadow-lg cursor-default">All</span>
           <span className="bg-surface-container-high text-on-surface px-8 py-3 rounded-full font-headline font-bold whitespace-nowrap cursor-default">Player Profiles</span>
           <span className="bg-surface-container-high text-on-surface px-8 py-3 rounded-full font-headline font-bold whitespace-nowrap cursor-default">Deep Dives</span>
@@ -82,8 +84,8 @@ export default async function InterviewsPage() {
 
       {/* ── INTERVIEW GRID ── */}
       {gridInterviews.length > 0 && (
-        <section className="px-4 sm:px-6 md:px-16 py-16 bg-surface-container-low">
-          <div className="max-w-[1440px] mx-auto">
+        <section className="py-16 bg-surface-container-low">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16">
             <div className="flex items-end justify-between mb-12">
               <div>
                 <span className="font-body text-secondary font-bold uppercase tracking-[0.2em] text-xs">Behind the Racket</span>
@@ -138,8 +140,8 @@ export default async function InterviewsPage() {
       )}
 
       {/* ── CTA ── */}
-      <section className="px-4 sm:px-6 md:px-16 py-24">
-        <div className="max-w-[1440px] mx-auto bg-primary rounded-[2rem] p-8 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 md:gap-16">
+      <section className="py-24">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16 bg-primary rounded-[2rem] p-8 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 md:gap-16">
           <div className="z-10 flex-1">
             <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tighter leading-tight mb-6">
               Never Miss a <br />Match Point.
