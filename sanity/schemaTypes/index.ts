@@ -1,10 +1,13 @@
 import { type SchemaTypeDefinition } from 'sanity'
-
-import {blockContentType} from './blockContentType'
-import {categoryType} from './categoryType'
-import {postType} from './postType'
-import {authorType} from './authorType'
+import { article } from './article'
+import { author } from './author'
+import { club } from './club'
+import { event } from './event'
+import { homepage } from './homepage'
+import { interview } from './interview'
+import { player } from './player'
+import { ranking } from './ranking'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [blockContentType, categoryType, postType, authorType],
+  types: [article, author, club, event, homepage, interview, player, ranking],
 }
