@@ -17,11 +17,16 @@ describe('ClubCard', () => {
 
   it('renders the court count', () => {
     render(<ClubCard club={mockClub} />)
-    expect(screen.getByText('4 courts')).toBeInTheDocument()
+    expect(screen.getByText(/4 courts/)).toBeInTheDocument()
   })
 
   it('links to the correct URL', () => {
     render(<ClubCard club={mockClub} />)
     expect(screen.getByRole('link')).toHaveAttribute('href', '/clubs/seminyak-padel-club')
+  })
+
+  it('renders the address', () => {
+    render(<ClubCard club={mockClub} />)
+    expect(screen.getByText('Jl. Raya Seminyak, Bali')).toBeInTheDocument()
   })
 })
