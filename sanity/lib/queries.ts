@@ -58,7 +58,8 @@ export const eventBySlugQuery = `
 export const allInterviewsQuery = `
   *[_type == "interview"] | order(publishedAt desc) {
     title, slug, publishedAt, coverImage,
-    "subject": subject->{ name, slug }
+    "subject": subject->{ name, slug, currentRanking },
+    "excerpt": body[0].children[0].text
   }
 `
 

@@ -2,27 +2,70 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Colors — Tropical Kineticism */
+  /* Colors — Tropical Kineticism (full design-system token set) */
   --color-primary: #066d40;
-  --color-primary-dim: #054f2e;
+  --color-primary-dim: #006037;
+  --color-primary-fixed: #9df5bc;
+  --color-primary-fixed-dim: #8fe7ae;
+  --color-primary-container: #9df5bc;
+  --color-on-primary: #e7ffeb;
+  --color-on-primary-fixed: #004a29;
+  --color-on-primary-fixed-variant: #006a3d;
+  --color-on-primary-container: #005e36;
+
   --color-secondary: #914d00;
+  --color-secondary-dim: #804300;
+  --color-secondary-fixed: #ffdcc3;
+  --color-secondary-fixed-dim: #ffcaa1;
+  --color-secondary-container: #ffdcc3;
+  --color-on-secondary: #fff7f4;
+  --color-on-secondary-fixed: #633300;
+  --color-on-secondary-fixed-variant: #8c4a00;
+  --color-on-secondary-container: #7e4200;
+
   --color-tertiary: #546600;
+  --color-tertiary-dim: #495900;
+  --color-tertiary-fixed: #d4ff00;
+  --color-tertiary-fixed-dim: #c7ef00;
+  --color-tertiary-container: #d4ff00;
+  --color-on-tertiary: #f3ffc2;
+  --color-on-tertiary-fixed: #3e4c00;
+  --color-on-tertiary-fixed-variant: #576a00;
+  --color-on-tertiary-container: #4e5f00;
+
   --color-surface: #fff8ef;
+  --color-surface-bright: #fff8ef;
+  --color-surface-dim: #e8d9ad;
+  --color-surface-variant: #f0e2b9;
+  --color-surface-tint: #066d40;
+  --color-surface-container-lowest: #ffffff;
   --color-surface-container-low: #fef3d6;
   --color-surface-container: #f9edcc;
   --color-surface-container-high: #f4e8c3;
+  --color-surface-container-highest: #f0e2b9;
+
   --color-on-surface: #3a3216;
   --color-on-surface-muted: #7a6b52;
-  --color-on-primary: #ffffff;
-  --color-tertiary-container: #d4ff00;
-  --color-on-tertiary-container: #4e5f00;
-  --color-on-tertiary: #f3ffc2;
-  --color-inverse-surface: #120e03;
-  --color-surface-container-lowest: #ffffff;
   --color-on-surface-variant: #685f3e;
+  --color-on-background: #3a3216;
+
+  --color-outline: #857a58;
+  --color-outline-variant: #beb18b;
+
+  --color-inverse-surface: #120e03;
+  --color-inverse-primary: #a2fbc1;
+  --color-inverse-on-surface: #a59c86;
+
+  --color-error: #ac3434;
+  --color-error-dim: #70030f;
+  --color-error-container: #f56965;
+  --color-on-error: #fff7f6;
+  --color-on-error-container: #65000b;
+
+  --color-background: #fff8ef;
 
   /* Typography */
-  --font-display: var(--font-lexend), sans-serif;
+  --font-headline: var(--font-lexend), sans-serif;
   --font-body: var(--font-manrope), sans-serif;
 
   /* Border radius */

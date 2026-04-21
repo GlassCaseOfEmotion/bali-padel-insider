@@ -41,7 +41,7 @@ export default async function EventPage({ params }: Props) {
           {event.eventType}
         </span>
       )}
-      <h1 className="mt-3 font-display text-4xl font-bold leading-tight tracking-[-0.02em] text-on-surface">
+      <h1 className="mt-3 font-headline text-4xl font-bold leading-tight tracking-[-0.02em] text-on-surface">
         {event.title}
       </h1>
       {formattedDate && (

@@ -30,7 +30,7 @@ export function PlayerCard({ player }: { player: Player }) {
       )}
       <div className="p-6">
         <div className="flex items-start justify-between gap-2">
-          <h3 className="font-display text-lg font-bold leading-snug tracking-[-0.02em] text-on-surface">
+          <h3 className="font-headline text-lg font-bold leading-snug tracking-[-0.02em] text-on-surface">
             {player.name}
           </h3>
           {player.currentRanking && (

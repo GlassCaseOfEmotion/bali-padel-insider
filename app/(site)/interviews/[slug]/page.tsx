@@ -39,7 +39,7 @@ export default async function InterviewPage({ params }: Props) {
       <span className="font-body text-xs font-semibold uppercase tracking-widest text-primary">
         Interview
       </span>
-      <h1 className="mt-3 font-display text-4xl font-bold leading-tight tracking-[-0.02em] text-on-surface">
+      <h1 className="mt-3 font-headline text-4xl font-bold leading-tight tracking-[-0.02em] text-on-surface">
         {interview.title}
       </h1>
       <div className="mt-4 flex items-center gap-4 font-body text-sm text-on-surface-muted">

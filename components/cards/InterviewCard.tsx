@@ -31,7 +31,7 @@ export function InterviewCard({ interview }: { interview: Interview }) {
         <span className="font-body text-xs font-semibold uppercase tracking-widest text-primary">
           Interview
         </span>
-        <h3 className="mt-2 font-display text-lg font-bold leading-snug tracking-[-0.02em] text-on-surface line-clamp-2">
+        <h3 className="mt-2 font-headline text-lg font-bold leading-snug tracking-[-0.02em] text-on-surface line-clamp-2">
           {interview.title}
         </h3>
         {interview.subject && (

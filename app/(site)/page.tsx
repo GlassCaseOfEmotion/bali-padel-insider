@@ -59,13 +59,13 @@ export default async function HomePage() {
 
           {featuredArticle ? (
             <>
-              <h1 className="font-display text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8 max-w-4xl">
+              <h1 className="font-headline text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8 max-w-4xl">
                 {featuredArticle.title}
               </h1>
               <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
                 <Link
                   href={`/news/${featuredArticle.slug.current}`}
-                  className="shrink-0 inline-flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-full font-display font-bold text-base uppercase tracking-widest hover:bg-primary-dim transition-all shadow-2xl"
+                  className="shrink-0 inline-flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold text-base uppercase tracking-widest hover:bg-primary-dim transition-all shadow-2xl"
                 >
                   Read Article
                 </Link>
@@ -77,7 +77,7 @@ export default async function HomePage() {
               </div>
             </>
           ) : (
-            <h1 className="font-display text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8 max-w-4xl">
+            <h1 className="font-headline text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8 max-w-4xl">
               Bali Padel<br />Insider.
             </h1>
           )}
@@ -93,7 +93,7 @@ export default async function HomePage() {
           {topRankings.length > 0 && (
             <div className="lg:col-span-4 bg-surface-container-high rounded-[2rem] p-10 shadow-[0_8px_40px_rgba(58,50,22,0.06)]">
               <div className="flex justify-between items-center mb-10">
-                <h2 className="font-display text-2xl font-black tracking-tighter uppercase text-primary">
+                <h2 className="font-headline text-2xl font-black tracking-tighter uppercase text-primary">
                   Top Rankings
                 </h2>
               </div>
@@ -107,11 +107,11 @@ export default async function HomePage() {
                     }`}
                   >
                     <div className="flex items-center gap-4">
-                      <span className={`font-display font-black text-2xl w-8 shrink-0 ${i === 0 ? 'text-tertiary' : 'text-on-surface-muted'}`}>
+                      <span className={`font-headline font-black text-2xl w-8 shrink-0 ${i === 0 ? 'text-tertiary' : 'text-on-surface-muted'}`}>
                         {String(entry.rank).padStart(2, '0')}
                       </span>
                       <div>
-                        <p className="font-display font-bold text-on-surface">{entry.player.name}</p>
+                        <p className="font-headline font-bold text-on-surface">{entry.player.name}</p>
                         {entry.player.nationality && (
                           <p className="font-body text-xs uppercase tracking-widest text-on-surface-variant font-bold flex items-center gap-1.5">
                             <span>{entry.player.nationality}</span>
@@ -129,13 +129,13 @@ export default async function HomePage() {
                         )}
                       </div>
                     </div>
-                    <span className="font-display font-black text-primary">{entry.points}</span>
+                    <span className="font-headline font-black text-primary">{entry.points}</span>
                   </Link>
                 ))}
               </div>
               <Link
                 href="/rankings"
-                className="w-full mt-8 py-4 font-display font-bold uppercase tracking-widest text-primary flex items-center justify-center rounded-full bg-surface-container-lowest/50 hover:bg-surface-container-lowest transition-colors text-sm"
+                className="w-full mt-8 py-4 font-headline font-bold uppercase tracking-widest text-primary flex items-center justify-center rounded-full bg-surface-container-lowest/50 hover:bg-surface-container-lowest transition-colors text-sm"
               >
                 View Full Leaderboard
               </Link>
@@ -145,7 +145,7 @@ export default async function HomePage() {
           {/* News cards */}
           <div className={`${topRankings.length > 0 ? 'lg:col-span-8' : 'lg:col-span-12'} flex flex-col gap-8`}>
             <div className="flex items-center justify-between">
-              <h2 className="font-display text-3xl font-black tracking-tighter uppercase text-on-surface">
+              <h2 className="font-headline text-3xl font-black tracking-tighter uppercase text-on-surface">
                 Recent News
               </h2>
               <Link href="/news" className="font-body text-secondary font-bold flex items-center gap-2 hover:underline text-sm">
@@ -194,7 +194,7 @@ export default async function HomePage() {
                           </span>
                         )}
                       </div>
-                      <h3 className="font-display text-xl font-bold leading-snug tracking-[-0.02em] text-on-surface line-clamp-2">
+                      <h3 className="font-headline text-xl font-bold leading-snug tracking-[-0.02em] text-on-surface line-clamp-2">
                         {article.title}
                       </h3>
                     </div>
@@ -229,7 +229,7 @@ export default async function HomePage() {
               )}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-inverse-surface hidden lg:block" />
               <div className="absolute bottom-8 left-8">
-                <span className="bg-tertiary text-on-tertiary px-4 py-1 rounded-full font-display font-black text-sm uppercase tracking-widest shadow-xl">
+                <span className="bg-tertiary text-on-tertiary px-4 py-1 rounded-full font-headline font-black text-sm uppercase tracking-widest shadow-xl">
                   Exclusive Feature
                 </span>
               </div>
@@ -238,25 +238,35 @@ export default async function HomePage() {
             {/* Content side */}
             <div className="lg:w-1/2 p-12 lg:p-16 flex flex-col justify-center">
               {featuredInterview.subject && (
-                <p className="font-display text-sm uppercase tracking-[0.2em] text-tertiary font-bold mb-6">
+                <p className="font-headline text-sm uppercase tracking-[0.2em] text-tertiary font-bold mb-6">
                   With {featuredInterview.subject.name}
                 </p>
               )}
-              <h2 className="font-display text-4xl md:text-5xl font-black tracking-tighter mb-8 leading-[0.95] text-white">
+              <h2 className="font-headline text-4xl md:text-5xl font-black tracking-tighter mb-6 leading-[0.95] text-white">
                 {featuredInterview.title}
               </h2>
-              <div className="flex items-center gap-8 mt-4">
+              {featuredInterview.excerpt && (
+                <p className="font-body text-white/70 text-lg leading-relaxed italic mb-8">
+                  {featuredInterview.excerpt}
+                </p>
+              )}
+              <div className="flex items-center gap-8">
                 <Link
                   href={`/interviews/${featuredInterview.slug.current}`}
-                  className="bg-primary text-on-primary px-8 py-4 rounded-full font-display font-bold uppercase tracking-widest hover:bg-primary-dim transition-colors inline-block"
+                  className="bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold uppercase tracking-widest hover:bg-primary-dim transition-colors inline-block"
                 >
                   Read Interview
                 </Link>
                 {featuredInterview.subject && (
                   <div>
-                    <p className="font-display font-bold text-xl text-white">
+                    <p className="font-headline font-bold text-xl text-white">
                       {featuredInterview.subject.name}
                     </p>
+                    {featuredInterview.subject.currentRanking && (
+                      <p className="font-body text-xs uppercase tracking-widest text-tertiary font-bold mt-0.5">
+                        #{featuredInterview.subject.currentRanking} Ranked Player
+                      </p>
+                    )}
                   </div>
                 )}
               </div>

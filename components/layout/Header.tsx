@@ -23,7 +23,7 @@ export function Header() {
           {/* Logo — left */}
           <Link
             href="/"
-            className="font-display text-xl font-black tracking-tight text-primary uppercase shrink-0"
+            className="font-headline text-xl font-black tracking-tight text-primary uppercase shrink-0"
           >
             Bali Padel Insider
           </Link>
@@ -36,7 +36,7 @@ export function Header() {
                 <Link
                   key={href}
                   href={href}
-                  className={`font-display text-sm font-bold uppercase tracking-tight pb-1 transition-colors ${
+                  className={`font-headline text-sm font-bold uppercase tracking-tight pb-1 transition-colors ${
                     active
                       ? 'text-primary border-b-2 border-primary'
                       : 'text-on-surface-muted hover:text-on-surface border-b-2 border-transparent'
@@ -51,7 +51,7 @@ export function Header() {
           {/* Join Club CTA — right */}
           <button
             type="button"
-            className="hidden md:flex ml-auto items-center bg-primary text-on-primary font-display font-bold text-sm uppercase tracking-widest px-6 py-2.5 rounded-full hover:bg-primary-dim transition-colors shrink-0"
+            className="hidden md:flex ml-auto items-center bg-primary text-on-primary font-headline font-bold text-sm uppercase tracking-widest px-6 py-2.5 rounded-full hover:bg-primary-dim transition-colors shrink-0"
           >
             Join Club
           </button>

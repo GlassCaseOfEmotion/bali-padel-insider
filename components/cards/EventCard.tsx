@@ -42,7 +42,7 @@ export function EventCard({ event }: { event: Event }) {
             {event.eventType}
           </span>
         )}
-        <h3 className="mt-2 font-display text-lg font-bold leading-snug tracking-[-0.02em] text-on-surface line-clamp-2">
+        <h3 className="mt-2 font-headline text-lg font-bold leading-snug tracking-[-0.02em] text-on-surface line-clamp-2">
           {event.title}
         </h3>
         {formattedDate && (

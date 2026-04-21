@@ -28,7 +28,7 @@ export function ClubCard({ club }: { club: Club }) {
         </div>
       )}
       <div className="p-6">
-        <h3 className="font-display text-lg font-bold leading-snug tracking-[-0.02em] text-on-surface line-clamp-2">
+        <h3 className="font-headline text-lg font-bold leading-snug tracking-[-0.02em] text-on-surface line-clamp-2">
           {club.name}
         </h3>
         {club.courts?.count && (

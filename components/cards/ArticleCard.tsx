@@ -35,7 +35,7 @@ export function ArticleCard({ article }: { article: Article }) {
             {article.category}
           </span>
         )}
-        <h3 className="mt-2 font-display text-lg font-bold leading-snug tracking-[-0.02em] text-on-surface line-clamp-2">
+        <h3 className="mt-2 font-headline text-lg font-bold leading-snug tracking-[-0.02em] text-on-surface line-clamp-2">
           {article.title}
         </h3>
         {article.excerpt && (
