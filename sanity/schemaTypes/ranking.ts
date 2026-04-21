@@ -29,7 +29,7 @@ export const ranking = defineType({
           ],
           preview: {
             select: { title: 'player.name', subtitle: 'rank' },
-            prepare({ title, subtitle }: { title: string; subtitle: number }) {
+            prepare({ title, subtitle }: { title?: string; subtitle?: number }) {
               return { title, subtitle: `Rank #${subtitle}` }
             },
           },
