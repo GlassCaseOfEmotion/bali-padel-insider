@@ -1,5 +1,4 @@
-import { client } from '@/sanity/lib/client'
-import { eventBySlugQuery } from '@/sanity/lib/queries'
+import { fetchEventBySlug } from '@/sanity/lib/fetch'
 import { PortableText } from '@/components/ui/PortableText'
 import { urlFor } from '@/sanity/lib/urlFor'
 import Image from 'next/image'
@@ -16,13 +15,13 @@ export const revalidate = 60
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const event = await client.fetch(eventBySlugQuery, { slug })
+  const event = await fetchEventBySlug(slug)
   return { title: event?.title ?? 'Event' }
 }
 
 export default async function EventPage({ params }: Props) {
   const { slug } = await params
-  const event = await client.fetch(eventBySlugQuery, { slug })
+  const event = await fetchEventBySlug(slug)
 
   if (!event) notFound()
 

@@ -16,6 +16,7 @@ export const homepageQuery = `
 `
 
 // Articles
+// GROQ slice [0...$limit] is inclusive, so limit: 49 returns 50 items (indices 0-49)
 export const latestArticlesQuery = `
   *[_type == "article"] | order(publishedAt desc) [0...$limit] {
     title, slug, excerpt, coverImage, publishedAt, category,
@@ -31,6 +32,7 @@ export const articleBySlugQuery = `
 `
 
 // Events
+// GROQ slice [0...$limit] is inclusive, so limit: 19 returns 20 items (indices 0-19)
 export const upcomingEventsQuery = `
   *[_type == "event" && date >= now()] | order(date asc) [0...$limit] {
     title, slug, date, eventType, coverImage,

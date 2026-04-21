@@ -1,5 +1,4 @@
-import { client } from '@/sanity/lib/client'
-import { articleBySlugQuery } from '@/sanity/lib/queries'
+import { fetchArticleBySlug } from '@/sanity/lib/fetch'
 import { PortableText } from '@/components/ui/PortableText'
 import { urlFor } from '@/sanity/lib/urlFor'
 import Image from 'next/image'
@@ -15,13 +14,13 @@ export const revalidate = 60
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const article = await client.fetch(articleBySlugQuery, { slug })
+  const article = await fetchArticleBySlug(slug)
   return { title: article?.title ?? 'Article' }
 }
 
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params
-  const article = await client.fetch(articleBySlugQuery, { slug })
+  const article = await fetchArticleBySlug(slug)
 
   if (!article) notFound()
 
