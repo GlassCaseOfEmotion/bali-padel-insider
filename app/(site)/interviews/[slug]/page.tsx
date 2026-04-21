@@ -70,7 +70,7 @@ export default async function InterviewPage({ params }: Props) {
               />
               <div className="absolute inset-0 bg-inverse-surface/20 flex items-center justify-center group-hover:bg-inverse-surface/30 transition-colors duration-500">
                 <div className="bg-surface/90 backdrop-blur-md w-20 md:w-24 h-20 md:h-24 rounded-full flex items-center justify-center text-primary shadow-2xl scale-100 hover:scale-110 transition-transform">
-                  <span className="text-4xl md:text-5xl font-black ml-1">▶</span>
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 md:w-12 h-10 md:h-12 ml-1 text-primary"><polygon points="5,3 19,12 5,21" /></svg>
                 </div>
               </div>
               <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 flex items-center gap-3 bg-surface/80 backdrop-blur px-4 md:px-6 py-2 md:py-3 rounded-full">

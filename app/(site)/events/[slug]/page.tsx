@@ -14,10 +14,10 @@ interface Props {
 export const revalidate = 60
 
 const EVENT_TYPE_COLORS: Record<string, string> = {
-  tournament: 'bg-secondary text-on-secondary',
+  tournament: 'bg-tertiary-container text-on-tertiary-container',
   clinic: 'bg-primary-container text-on-primary-container',
-  social: 'bg-tertiary text-on-tertiary',
-  mixer: 'bg-tertiary text-on-tertiary',
+  social: 'bg-surface-container-high text-on-surface',
+  mixer: 'bg-surface-container-high text-on-surface',
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -150,7 +150,7 @@ export default async function EventPage({ params }: Props) {
       </section>
 
       {/* ── BENTO GRID: PRIZE POOL + COUNTDOWN + SCHEDULE ── */}
-      {(hasPrizePool || hasSchedule || event.registrationDeadline || event.coverImage) && (
+      {(hasPrizePool || hasSchedule || event.registrationDeadline) && (
         <section className="py-16 md:py-24 px-4 sm:px-8 md:px-16 lg:px-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 max-w-[1440px] mx-auto">
 
@@ -215,7 +215,7 @@ export default async function EventPage({ params }: Props) {
             )}
 
             {/* Image feature */}
-            {event.coverImage && hasSchedule && (
+            {event.coverImage && (
               <div className="md:col-span-4 rounded-[2rem] overflow-hidden h-64 md:h-auto">
                 <Image
                   src={urlFor(event.coverImage as SanityImageSource).width(600).height(700).url()}
@@ -275,7 +275,7 @@ export default async function EventPage({ params }: Props) {
             <p className="text-center text-xs font-body uppercase tracking-[0.3em] text-on-surface-variant mb-10 md:mb-12">
               Proudly Supported By
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-24 opacity-50 hover:opacity-70 transition-opacity">
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-24 opacity-50 grayscale hover:opacity-80 hover:grayscale-0 transition-all">
               {event.sponsors.map((sponsor: string) => (
                 <span key={sponsor} className="font-headline font-black text-lg md:text-2xl tracking-tighter">
                   {sponsor}
