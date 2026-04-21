@@ -46,10 +46,10 @@ const OFF_COURT_LABELS: Record<string, string> = {
 }
 
 const BAG_ITEMS = [
-  { key: 'racket', urlKey: 'racketUrl', label: 'Racket' },
-  { key: 'shoes', urlKey: 'shoesUrl', label: 'Footwear' },
-  { key: 'grip', urlKey: 'gripUrl', label: 'Grip' },
-  { key: 'bag', urlKey: 'bagUrl', label: 'The Bag' },
+  { key: 'racket', urlKey: 'racketUrl', imageKey: 'racketImage', descKey: 'racketDescription', label: 'Racket' },
+  { key: 'shoes', urlKey: 'shoesUrl', imageKey: 'shoesImage', descKey: 'shoesDescription', label: 'Footwear' },
+  { key: 'grip', urlKey: 'gripUrl', imageKey: 'gripImage', descKey: 'gripDescription', label: 'Grip' },
+  { key: 'bag', urlKey: 'bagUrl', imageKey: 'bagImage', descKey: 'bagDescription', label: 'The Bag' },
 ] as const
 
 export default async function PlayerPage({ params }: Props) {
@@ -65,7 +65,13 @@ export default async function PlayerPage({ params }: Props) {
     .filter((item) => item.value)
 
   const inMyBag = BAG_ITEMS
-    .map((item) => ({ ...item, value: player[item.key], url: player[item.urlKey] ?? null }))
+    .map((item) => ({
+      ...item,
+      value: player[item.key],
+      url: player[item.urlKey] ?? null,
+      image: player[item.imageKey] ?? null,
+      description: player[item.descKey] ?? null,
+    }))
     .filter((item) => item.value)
 
   const partners: { name: string; url?: string }[] = player.partners ?? []
@@ -408,11 +414,21 @@ export default async function PlayerPage({ params }: Props) {
             <div className="relative z-10">
               <h2 className="font-headline text-5xl font-black tracking-tighter mb-16">IN MY BAG</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                {inMyBag.map(({ key, label, value, url }, index) => {
+                {inMyBag.map(({ key, label, value, url, image, description }, index) => {
                   const inner = (
                     <>
-                      <div className="aspect-square bg-surface-container rounded-[1.5rem] flex items-center justify-center p-8 transition-colors group-hover:bg-primary-container">
-                        <span className="font-headline font-black text-4xl text-primary/30">{label[0]}</span>
+                      <div className="aspect-square bg-surface-container rounded-[1.5rem] overflow-hidden flex items-center justify-center transition-colors group-hover:bg-primary-container">
+                        {image ? (
+                          <Image
+                            src={urlFor(image as SanityImageSource).width(400).height(400).url()}
+                            alt={value as string}
+                            width={400}
+                            height={400}
+                            className="w-full h-full object-contain p-6 drop-shadow-xl"
+                          />
+                        ) : (
+                          <span className="font-headline font-black text-4xl text-primary/30 p-8">{label[0]}</span>
+                        )}
                       </div>
                       <div>
                         <p className="font-body text-xs uppercase tracking-widest font-bold text-primary mb-1 flex items-center gap-2">
@@ -420,6 +436,9 @@ export default async function PlayerPage({ params }: Props) {
                           {url && <span className="text-primary/40 text-[10px] font-normal normal-case tracking-normal">→ buy</span>}
                         </p>
                         <h4 className="font-headline font-bold text-xl">{value}</h4>
+                        {description && (
+                          <p className="font-body text-sm text-on-surface-variant mt-2">{description}</p>
+                        )}
                       </div>
                     </>
                   )

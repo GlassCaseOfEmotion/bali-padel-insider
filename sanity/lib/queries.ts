@@ -86,7 +86,10 @@ export const playerBySlugQuery = `
     recentResults[] { tournamentName, opponent, score, isWin },
     islandMindsetQ1, islandMindsetA1, islandMindsetQ2, islandMindsetA2,
     preMatchRitual, secretTalent, favouritePlaylist, recoveryRoutine,
-    racket, racketUrl, shoes, shoesUrl, grip, gripUrl, bag, bagUrl,
+    racket, racketDescription, racketImage, racketUrl,
+    shoes, shoesDescription, shoesImage, shoesUrl,
+    grip, gripDescription, gripImage, gripUrl,
+    bag, bagDescription, bagImage, bagUrl,
     partners[] { name, url },
     "homeClub": homeClub->{ name, slug },
     "interviews": *[_type == "interview" && references(^._id)] | order(publishedAt desc) [0..2] {

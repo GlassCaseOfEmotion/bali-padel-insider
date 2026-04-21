@@ -84,12 +84,20 @@ export const player = defineType({
 
     // In My Bag
     defineField({ name: 'racket', type: 'string', group: 'inMyBag' }),
+    defineField({ name: 'racketDescription', title: 'Racket — Description', type: 'string', group: 'inMyBag' }),
+    defineField({ name: 'racketImage', title: 'Racket — Image', type: 'image', options: { hotspot: true }, group: 'inMyBag' }),
     defineField({ name: 'racketUrl', title: 'Racket — Buy Link', type: 'url', group: 'inMyBag' }),
     defineField({ name: 'shoes', type: 'string', group: 'inMyBag' }),
+    defineField({ name: 'shoesDescription', title: 'Shoes — Description', type: 'string', group: 'inMyBag' }),
+    defineField({ name: 'shoesImage', title: 'Shoes — Image', type: 'image', options: { hotspot: true }, group: 'inMyBag' }),
     defineField({ name: 'shoesUrl', title: 'Shoes — Buy Link', type: 'url', group: 'inMyBag' }),
     defineField({ name: 'grip', type: 'string', group: 'inMyBag' }),
+    defineField({ name: 'gripDescription', title: 'Grip — Description', type: 'string', group: 'inMyBag' }),
+    defineField({ name: 'gripImage', title: 'Grip — Image', type: 'image', options: { hotspot: true }, group: 'inMyBag' }),
     defineField({ name: 'gripUrl', title: 'Grip — Buy Link', type: 'url', group: 'inMyBag' }),
     defineField({ name: 'bag', type: 'string', group: 'inMyBag' }),
+    defineField({ name: 'bagDescription', title: 'Bag — Description', type: 'string', group: 'inMyBag' }),
+    defineField({ name: 'bagImage', title: 'Bag — Image', type: 'image', options: { hotspot: true }, group: 'inMyBag' }),
     defineField({ name: 'bagUrl', title: 'Bag — Buy Link', type: 'url', group: 'inMyBag' }),
 
     // Official Partners
