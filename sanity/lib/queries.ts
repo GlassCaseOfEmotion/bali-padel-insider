@@ -107,9 +107,12 @@ export const rankingByCategoryQuery = `
 
 // Clubs
 export const allClubsQuery = `
-  *[_type == "club"] | order(name asc) {
-    name, slug, logo, coverPhoto, courts,
-    "address": location.address
+  *[_type == "club"] | order(isPremium desc, name asc) {
+    name, slug, logo, coverPhoto, courts, facilities,
+    isPremium, rating, pricePerHour,
+    "address": location.address,
+    "lat": location.lat,
+    "lng": location.lng
   }
 `
 

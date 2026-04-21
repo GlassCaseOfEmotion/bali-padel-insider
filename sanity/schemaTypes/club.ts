@@ -16,6 +16,9 @@ export const club = defineType({
       options: { source: 'name' },
       validation: (Rule) => Rule.required(),
     }),
+    defineField({ name: 'isPremium', title: 'Premium Club', type: 'boolean' }),
+    defineField({ name: 'rating', title: 'Rating (0–5)', type: 'number' }),
+    defineField({ name: 'pricePerHour', title: 'Price per Hour (USD)', type: 'number' }),
     defineField({ name: 'logo', type: 'image', options: { hotspot: true } }),
     defineField({ name: 'coverPhoto', type: 'image', options: { hotspot: true } }),
     defineField({
@@ -28,6 +31,8 @@ export const club = defineType({
       type: 'object',
       fields: [
         defineField({ name: 'address', type: 'string' }),
+        defineField({ name: 'lat', title: 'Latitude', type: 'number', description: 'e.g. -8.8291 for Uluwatu' }),
+        defineField({ name: 'lng', title: 'Longitude', type: 'number', description: 'e.g. 115.0849 for Uluwatu' }),
         defineField({ name: 'googleMapsUrl', type: 'url' }),
       ],
     }),
@@ -44,7 +49,11 @@ export const club = defineType({
       type: 'array',
       of: [{ type: 'string' }],
       options: {
-        list: ['Lights', 'Pro Shop', 'Cafe', 'Changing Rooms', 'Parking', 'Showers'],
+        list: [
+          'Lights', 'Pro Shop', 'Cafe', 'Bar', 'Restaurant',
+          'Changing Rooms', 'Showers', 'Parking', 'Pool',
+          'Spa', 'Gym', 'WiFi', 'Ice Bath', 'Smoothie Bar',
+        ],
       },
     }),
     defineField({ name: 'website', type: 'url' }),
