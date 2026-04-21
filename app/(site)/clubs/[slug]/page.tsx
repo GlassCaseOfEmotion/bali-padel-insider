@@ -47,7 +47,7 @@ export default async function ClubPage({ params }: Props) {
     <main className="pb-32">
 
       {/* ── HERO: full-bleed fixed height matching mockup ── */}
-      <section className="mt-8 relative h-[480px] md:h-[614px] w-full overflow-hidden group mx-auto max-w-[1440px] px-4 md:px-8">
+      <section className="mt-8 relative h-[480px] md:h-[614px] w-full overflow-hidden group mx-auto max-w-[1440px] px-4 sm:px-6 md:px-16">
         <div className="relative h-full rounded-[2rem] overflow-hidden">
           {club.coverPhoto ? (
             <Image
@@ -84,7 +84,7 @@ export default async function ClubPage({ params }: Props) {
       </section>
 
       {/* ── BENTO GRID CONTENT ── */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 my-16 max-w-[1440px] mx-auto px-4 md:px-8">
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 my-16 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16">
 
         {/* Left: About + Amenities */}
         <div className="lg:col-span-8 space-y-8">

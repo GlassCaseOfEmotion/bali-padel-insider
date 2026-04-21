@@ -36,7 +36,7 @@ export default async function ArticlePage({ params }: Props) {
   return (
     <main>
       {/* ── HERO: two-column layout — text left, image right ── */}
-      <section className="relative min-h-[600px] flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 overflow-hidden bg-surface py-10 md:py-16 lg:py-20">
+      <section className="relative min-h-[600px] flex flex-col items-center justify-center px-4 sm:px-6 md:px-16 overflow-hidden bg-surface py-10 md:py-16 lg:py-20">
         <div className="max-w-[1440px] w-full grid md:grid-cols-2 gap-12 items-center mx-auto">
 
           {/* Left: text */}
@@ -79,7 +79,7 @@ export default async function ArticlePage({ params }: Props) {
       </section>
 
       {/* ── ARTICLE BODY ── */}
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 py-10 md:py-16">
 
           {/* Main editorial content */}

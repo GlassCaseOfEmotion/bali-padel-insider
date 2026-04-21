@@ -58,7 +58,7 @@ export default async function ClubsPage() {
 
   return (
     <main className="min-h-screen">
-      <section className="px-6 py-12 max-w-[1440px] mx-auto">
+      <section className="px-4 sm:px-6 md:px-16 py-12 max-w-[1440px] mx-auto">
 
         {/* ── HERO + FILTERS ── */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">

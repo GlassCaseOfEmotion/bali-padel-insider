@@ -88,7 +88,7 @@ export default async function PlayerPage({ params }: Props) {
     <main className="pt-12 pb-32">
 
       {/* ── HERO ── */}
-      <section className="px-4 sm:px-6 md:px-8 max-w-[1440px] mx-auto mt-12 mb-20">
+      <section className="px-4 sm:px-6 md:px-16 max-w-[1440px] mx-auto mt-12 mb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
 
           {/* Photo column */}
@@ -181,7 +181,7 @@ export default async function PlayerPage({ params }: Props) {
 
       {/* ── STATS BENTO GRID ── */}
       {hasStats && (
-        <section className="px-4 sm:px-6 md:px-8 max-w-[1440px] mx-auto mb-12 md:mb-24">
+        <section className="px-4 sm:px-6 md:px-16 max-w-[1440px] mx-auto mb-12 md:mb-24">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
 
             {/* Career Win Rate */}
@@ -250,7 +250,7 @@ export default async function PlayerPage({ params }: Props) {
       {/* ── FEATURED INTERVIEW & CLIPS ── */}
       {featuredInterview && (
         <section className="mb-12 md:mb-24">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16">
             <div className="bg-primary/5 rounded-[2rem] p-8 md:p-12">
               <div className="flex flex-col lg:flex-row gap-12 items-center">
 
@@ -344,7 +344,7 @@ export default async function PlayerPage({ params }: Props) {
       {/* ── THE ISLAND MINDSET Q&A ── */}
       {hasIslandMindset && (
         <section className="bg-surface-container-lowest py-12 md:py-20 lg:py-24 mb-12 md:mb-24 overflow-hidden">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 lg:gap-20 items-center">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 lg:gap-20 items-center">
             <div className="relative">
               <div className="absolute -top-6 -left-4 md:-top-10 md:-left-10 text-[6rem] md:text-[12rem] font-black text-surface-container-high select-none leading-none z-0 font-headline">
                 &ldquo;
@@ -390,7 +390,7 @@ export default async function PlayerPage({ params }: Props) {
 
       {/* ── OFF THE COURT ── */}
       {offTheCourt.length > 0 && (
-        <section className="px-4 sm:px-6 md:px-8 max-w-[1440px] mx-auto mb-12 md:mb-24">
+        <section className="px-4 sm:px-6 md:px-16 max-w-[1440px] mx-auto mb-12 md:mb-24">
           <h3 className="font-body text-sm font-bold uppercase tracking-widest mb-12 opacity-60">Off the Court</h3>
           <div className="flex flex-col md:flex-row gap-8">
             {offTheCourt.map(({ key, label, icon, value }, index) => (
@@ -409,7 +409,7 @@ export default async function PlayerPage({ params }: Props) {
 
       {/* ── IN MY BAG ── */}
       {inMyBag.length > 0 && (
-        <section className="px-4 sm:px-6 md:px-8 max-w-[1440px] mx-auto">
+        <section className="px-4 sm:px-6 md:px-16 max-w-[1440px] mx-auto">
           <div className="bg-surface-container-highest rounded-[2rem] p-6 md:p-12 lg:p-20 overflow-hidden relative">
             <div className="relative z-10">
               <h2 className="font-headline text-5xl font-black tracking-tighter mb-16">IN MY BAG</h2>

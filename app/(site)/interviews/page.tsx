@@ -29,7 +29,7 @@ export default async function InterviewsPage() {
 
       {/* ── HERO: FEATURED VIDEO ── */}
       {featuredInterview && (
-        <section className="px-8 pb-12">
+        <section className="px-4 sm:px-6 md:px-16 pb-12">
           <div className="max-w-[1700px] mx-auto relative group overflow-hidden rounded-[2rem] bg-surface-container-highest aspect-[21/9]">
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
             {featuredInterview.coverImage ? (
@@ -71,7 +71,7 @@ export default async function InterviewsPage() {
       )}
 
       {/* ── CATEGORY FILTERS (static) ── */}
-      <section className="px-8 pb-12 overflow-x-auto">
+      <section className="px-4 sm:px-6 md:px-16 pb-12 overflow-x-auto">
         <div className="max-w-[1700px] mx-auto flex gap-4">
           <span className="bg-primary text-on-primary px-8 py-3 rounded-full font-headline font-bold whitespace-nowrap shadow-lg cursor-default">All</span>
           <span className="bg-surface-container-high text-on-surface px-8 py-3 rounded-full font-headline font-bold whitespace-nowrap cursor-default">Player Profiles</span>
@@ -82,7 +82,7 @@ export default async function InterviewsPage() {
 
       {/* ── INTERVIEW GRID ── */}
       {gridInterviews.length > 0 && (
-        <section className="px-8 py-16 bg-surface-container-low">
+        <section className="px-4 sm:px-6 md:px-16 py-16 bg-surface-container-low">
           <div className="max-w-[1700px] mx-auto">
             <div className="flex items-end justify-between mb-12">
               <div>
@@ -132,13 +132,13 @@ export default async function InterviewsPage() {
       )}
 
       {interviews.length === 0 && (
-        <div className="px-8 py-32 text-center">
+        <div className="px-4 sm:px-6 md:px-16 py-32 text-center">
           <p className="font-body text-on-surface-variant text-lg">No interviews published yet.</p>
         </div>
       )}
 
       {/* ── CTA ── */}
-      <section className="px-8 py-24">
+      <section className="px-4 sm:px-6 md:px-16 py-24">
         <div className="max-w-[1700px] mx-auto bg-primary rounded-[2rem] p-8 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 md:gap-16">
           <div className="z-10 flex-1">
             <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tighter leading-tight mb-6">

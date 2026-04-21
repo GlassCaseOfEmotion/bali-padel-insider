@@ -39,7 +39,7 @@ export default async function NewsPage() {
   const featuredInterview: Interview | null = interviews?.[0] ?? null
 
   return (
-    <main className="pt-12 pb-32 px-6 md:px-12 max-w-[1440px] mx-auto">
+    <main className="pt-12 pb-32 px-4 sm:px-6 md:px-16 max-w-[1440px] mx-auto">
 
       {/* ── FEATURED HERO ── */}
       {featuredArticle && (

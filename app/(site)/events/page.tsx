@@ -36,7 +36,7 @@ export default async function EventsPage() {
   const gridEvents = upcoming.slice(1)
 
   return (
-    <main className="pt-12 pb-32 px-4 sm:px-6 md:px-8 max-w-[1440px] mx-auto">
+    <main className="pt-12 pb-32 px-4 sm:px-6 md:px-16 max-w-[1440px] mx-auto">
 
       {/* ── HERO FEATURED EVENT ── */}
       {featuredEvent && (

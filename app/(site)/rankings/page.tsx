@@ -33,7 +33,7 @@ export default async function RankingsPage({ searchParams }: Props) {
   const topEntry = entries[0] ?? null
 
   return (
-    <main className="pt-12 pb-32 px-4 md:px-12 max-w-[1440px] mx-auto">
+    <main className="pt-12 pb-32 px-4 sm:px-6 md:px-16 max-w-[1440px] mx-auto">
 
       {/* ── HERO ── */}
       <header className="mb-12 md:ml-0">

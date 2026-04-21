@@ -64,7 +64,7 @@ export default async function EventPage({ params }: Props) {
     <main className="overflow-x-hidden">
 
       {/* ── HERO ── */}
-      <section className="relative min-h-[600px] md:min-h-[870px] flex items-center px-4 sm:px-8 md:px-16 lg:px-24 py-20">
+      <section className="relative min-h-[600px] md:min-h-[870px] flex items-center px-4 sm:px-6 md:px-16 py-20">
         <div className="absolute inset-0 z-0">
           {event.coverImage ? (
             <Image
@@ -151,7 +151,7 @@ export default async function EventPage({ params }: Props) {
 
       {/* ── BENTO GRID: PRIZE POOL + COUNTDOWN + SCHEDULE ── */}
       {(hasPrizePool || hasSchedule || event.registrationDeadline) && (
-        <section className="py-16 md:py-24 px-4 sm:px-8 md:px-16 lg:px-24">
+        <section className="py-16 md:py-24 px-4 sm:px-6 md:px-16">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 max-w-[1440px] mx-auto">
 
             {/* Prize Pool */}
@@ -271,7 +271,7 @@ export default async function EventPage({ params }: Props) {
       {/* ── SPONSORS ── */}
       {hasSponsors && (
         <section className="py-16 md:py-20 bg-surface-container-lowest">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16">
             <p className="text-center text-xs font-body uppercase tracking-[0.3em] text-on-surface-variant mb-10 md:mb-12">
               Proudly Supported By
             </p>
@@ -288,7 +288,7 @@ export default async function EventPage({ params }: Props) {
 
       {/* ── LOCATION ── */}
       {hasLocation && (
-        <section className="py-16 md:py-24 px-4 sm:px-8 md:px-16 lg:px-24">
+        <section className="py-16 md:py-24 px-4 sm:px-6 md:px-16">
           <div className="max-w-[1440px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
               <div>
@@ -368,7 +368,7 @@ export default async function EventPage({ params }: Props) {
       )}
 
       {/* ── BACK LINK ── */}
-      <div className="px-4 sm:px-8 md:px-16 pb-16 max-w-[1440px] mx-auto">
+      <div className="px-4 sm:px-6 md:px-16 pb-16 max-w-[1440px] mx-auto">
         <Link href="/events" className="font-body text-on-surface-variant font-bold text-sm hover:underline">
           ← All Events
         </Link>

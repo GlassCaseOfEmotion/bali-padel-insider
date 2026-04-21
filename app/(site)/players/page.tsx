@@ -29,7 +29,7 @@ export default async function PlayersPage() {
       {/* ── HERO ── */}
       <header className="relative w-full min-h-[480px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-surface-container-low via-surface to-surface-container" />
-        <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 w-full py-20">
+        <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16 w-full py-20">
           <div className="max-w-2xl">
             <span className="bg-tertiary text-on-tertiary px-4 py-1.5 rounded-full font-body text-xs font-bold uppercase tracking-widest mb-6 inline-block">
               Member Directory
@@ -47,11 +47,11 @@ export default async function PlayersPage() {
       {/* ── TOP 5 HORIZONTAL SCROLL ── */}
       {top5.length > 0 && (
         <section className="py-16 bg-surface-container-low overflow-hidden">
-          <div className="max-w-[1440px] mx-auto px-8 mb-10">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16 mb-10">
             <h2 className="font-headline text-4xl font-black tracking-tight text-on-surface">The Elite Top 5</h2>
             <p className="font-body text-on-surface/60 font-medium uppercase tracking-widest text-sm mt-2">Bali Season Rankings</p>
           </div>
-          <div className="flex gap-6 overflow-x-auto px-8 pb-8" style={{ scrollbarWidth: 'none' }}>
+          <div className="flex gap-6 overflow-x-auto px-4 sm:px-6 md:px-16 pb-8" style={{ scrollbarWidth: 'none' }}>
             {top5.map((player) => {
               const flagCode = player.nationality ? nationalityCode(player.nationality) : ''
               return (
@@ -107,7 +107,7 @@ export default async function PlayersPage() {
       )}
 
       {/* ── PLAYER GRID ── */}
-      <main className="py-16 max-w-[1440px] mx-auto px-8">
+      <main className="py-16 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16">
         <div className="flex items-center justify-between mb-10">
           <h2 className="font-headline text-3xl font-black tracking-tight">
             All Players <span className="text-primary">({players.length})</span>

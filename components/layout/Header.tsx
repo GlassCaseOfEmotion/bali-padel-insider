@@ -21,7 +21,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-surface/80 backdrop-blur-[20px] shadow-[0_4px_30px_rgba(58,50,22,0.07)]">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-16">
         <div className="relative flex items-center h-16">
 
           {/* Logo */}
