@@ -159,3 +159,20 @@ export const playersByClubQuery = `
     name, slug, photo, currentRanking, nationality
   }
 `
+
+// Features
+export const allFeaturesQuery = `
+  *[_type == "feature"] | order(publishedAt desc) {
+    title, slug, badge, excerpt, coverImage, publishedAt,
+    stats
+  }
+`
+
+export const featureBySlugQuery = `
+  *[_type == "feature" && slug.current == $slug][0] {
+    title, slug, badge, excerpt, coverImage, publishedAt,
+    stats, pullQuote, pullQuoteAttribution, body,
+    ctaHeadline, ctaBody, ctaPrimaryLabel, ctaPrimaryUrl,
+    ctaSecondaryLabel, ctaSecondaryUrl, ctaImage
+  }
+`

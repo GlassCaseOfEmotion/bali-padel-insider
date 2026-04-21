@@ -9,6 +9,8 @@ import {
   allPlayersQuery,
   allClubsQuery,
   rankingByCategoryQuery,
+  allFeaturesQuery,
+  featureBySlugQuery,
 } from './queries'
 
 export const fetchArticleBySlug = cache((slug: string) =>
@@ -41,4 +43,12 @@ export const fetchAllClubs = cache(() =>
 
 export const fetchRankingByCategory = cache((category: string) =>
   client.fetch(rankingByCategoryQuery, { category })
+)
+
+export const fetchAllFeatures = cache(() =>
+  client.fetch(allFeaturesQuery)
+)
+
+export const fetchFeatureBySlug = cache((slug: string) =>
+  client.fetch(featureBySlugQuery, { slug })
 )
