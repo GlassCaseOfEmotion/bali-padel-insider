@@ -9,6 +9,7 @@ import { urlFor } from '@/sanity/lib/urlFor'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { SanityImageSource } from '@sanity/image-url'
+import { nationalityFlag } from '@/lib/flags'
 
 export const revalidate = 60
 
@@ -99,19 +100,20 @@ export default async function HomePage() {
                   <Link
                     key={entry.rank}
                     href="/rankings"
-                    className={`flex items-center justify-between p-4 rounded-[1rem] transition-transform hover:scale-[1.02] ${
+                    className={`flex items-center justify-between px-5 py-3 rounded-full transition-transform hover:scale-[1.02] ${
                       i === 0 ? 'bg-surface-container-lowest shadow-[0_2px_12px_rgba(58,50,22,0.08)]' : 'bg-surface-container-lowest/50'
                     }`}
                   >
                     <div className="flex items-center gap-4">
-                      <span className={`font-display font-black text-2xl ${i === 0 ? 'text-tertiary' : 'text-on-surface-muted'}`}>
+                      <span className={`font-display font-black text-2xl w-8 shrink-0 ${i === 0 ? 'text-tertiary' : 'text-on-surface-muted'}`}>
                         {String(entry.rank).padStart(2, '0')}
                       </span>
                       <div>
                         <p className="font-display font-bold text-on-surface">{entry.player.name}</p>
                         {entry.player.nationality && (
-                          <p className="font-body text-xs uppercase tracking-widest text-on-surface-variant font-bold">
-                            {entry.player.nationality}
+                          <p className="font-body text-xs uppercase tracking-widest text-on-surface-variant font-bold flex items-center gap-1">
+                            <span>{nationalityFlag(entry.player.nationality)}</span>
+                            <span>{entry.player.nationality}</span>
                           </p>
                         )}
                       </div>
