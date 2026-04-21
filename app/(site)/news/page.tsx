@@ -64,13 +64,13 @@ export default async function NewsPage() {
                 </span>
               </div>
             </div>
-            <div className="lg:w-1/3 p-10 flex flex-col justify-center">
+            <div className="lg:w-1/3 p-6 md:p-10 flex flex-col justify-center">
               {featuredArticle.category && (
                 <span className="font-body text-xs font-black uppercase tracking-widest text-secondary mb-4 block">
                   {featuredArticle.category}
                 </span>
               )}
-              <h1 className="font-headline text-4xl md:text-5xl font-extrabold text-primary tracking-tighter leading-tight mb-6">
+              <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary tracking-tighter leading-tight mb-6">
                 {featuredArticle.title}
               </h1>
               {featuredArticle.excerpt && (

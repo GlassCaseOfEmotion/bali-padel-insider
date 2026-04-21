@@ -36,7 +36,7 @@ export default async function EventsPage() {
   const gridEvents = upcoming.slice(1)
 
   return (
-    <main className="pt-12 pb-32 px-8 max-w-[1440px] mx-auto">
+    <main className="pt-12 pb-32 px-4 sm:px-6 md:px-8 max-w-[1440px] mx-auto">
 
       {/* ── HERO FEATURED EVENT ── */}
       {featuredEvent && (
@@ -55,14 +55,14 @@ export default async function EventsPage() {
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
           </div>
-          <div className="relative z-10 p-12 w-full flex flex-col lg:flex-row gap-8 items-end">
+          <div className="relative z-10 p-6 md:p-12 w-full flex flex-col lg:flex-row gap-8 items-end">
             <div className="flex-1">
               {featuredEvent.eventType && (
                 <span className={`inline-flex items-center gap-2 px-4 py-2 rounded-full font-body text-xs font-bold uppercase tracking-widest mb-6 ${EVENT_TYPE_COLORS[featuredEvent.eventType.toLowerCase()] ?? 'bg-tertiary text-on-tertiary'}`}>
                   {featuredEvent.eventType}
                 </span>
               )}
-              <h1 className="font-headline text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-6">
+              <h1 className="font-headline text-4xl sm:text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-6">
                 {featuredEvent.title}
               </h1>
               {featuredEvent.date && (
@@ -87,10 +87,10 @@ export default async function EventsPage() {
       {/* ── FILTER PILLS (static) ── */}
       <section className="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
         <div className="flex flex-wrap gap-4">
-          <span className="px-8 py-3 bg-primary text-on-primary rounded-full font-headline font-bold text-sm uppercase tracking-widest">All Events</span>
-          <span className="px-8 py-3 bg-surface-container-high text-on-surface/60 rounded-full font-headline font-bold text-sm uppercase tracking-widest">Tournaments</span>
-          <span className="px-8 py-3 bg-surface-container-high text-on-surface/60 rounded-full font-headline font-bold text-sm uppercase tracking-widest">Social Mixers</span>
-          <span className="px-8 py-3 bg-surface-container-high text-on-surface/60 rounded-full font-headline font-bold text-sm uppercase tracking-widest">Clinics</span>
+          <span className="px-4 sm:px-8 py-2 sm:py-3 bg-primary text-on-primary rounded-full font-headline font-bold text-sm uppercase tracking-widest">All Events</span>
+          <span className="px-4 sm:px-8 py-2 sm:py-3 bg-surface-container-high text-on-surface/60 rounded-full font-headline font-bold text-sm uppercase tracking-widest">Tournaments</span>
+          <span className="px-4 sm:px-8 py-2 sm:py-3 bg-surface-container-high text-on-surface/60 rounded-full font-headline font-bold text-sm uppercase tracking-widest">Social Mixers</span>
+          <span className="px-4 sm:px-8 py-2 sm:py-3 bg-surface-container-high text-on-surface/60 rounded-full font-headline font-bold text-sm uppercase tracking-widest">Clinics</span>
         </div>
       </section>
 

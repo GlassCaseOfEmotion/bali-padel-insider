@@ -88,7 +88,7 @@ export default async function PlayerPage({ params }: Props) {
     <main className="pt-12 pb-32">
 
       {/* ── HERO ── */}
-      <section className="px-8 max-w-[1440px] mx-auto mt-12 mb-20">
+      <section className="px-4 sm:px-6 md:px-8 max-w-[1440px] mx-auto mt-12 mb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
 
           {/* Photo column */}
@@ -125,7 +125,7 @@ export default async function PlayerPage({ params }: Props) {
             <div className="inline-block bg-primary-container text-on-primary-container px-4 py-1 rounded-full mb-6 font-body text-sm font-bold uppercase tracking-widest">
               {player.tier ?? player.nationality ?? 'Player'}
             </div>
-            <h1 className="font-headline text-7xl md:text-8xl font-black text-on-surface tracking-tighter leading-none mb-4">
+            <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-on-surface tracking-tighter leading-none mb-4">
               {player.name}
             </h1>
             {player.bio && (
@@ -181,22 +181,22 @@ export default async function PlayerPage({ params }: Props) {
 
       {/* ── STATS BENTO GRID ── */}
       {hasStats && (
-        <section className="px-8 max-w-[1440px] mx-auto mb-24">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <section className="px-4 sm:px-6 md:px-8 max-w-[1440px] mx-auto mb-12 md:mb-24">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
 
             {/* Career Win Rate */}
             {player.winRate && (
-              <div className="md:col-span-2 bg-surface-container-low p-10 rounded-[2rem] flex flex-col justify-between aspect-video md:aspect-auto">
+              <div className="col-span-2 bg-surface-container-low p-6 md:p-10 rounded-[2rem] flex flex-col justify-between aspect-video md:aspect-auto">
                 <h3 className="font-body text-sm font-bold uppercase tracking-widest opacity-60">Career Win Rate</h3>
                 <div className="mt-auto">
-                  <span className="text-8xl font-black text-primary leading-none font-headline">{player.winRate}</span>
+                  <span className="text-5xl md:text-7xl lg:text-8xl font-black text-primary leading-none font-headline">{player.winRate}</span>
                 </div>
               </div>
             )}
 
             {/* Recent Results */}
             {recentResults.length > 0 && (
-              <div className={`${player.winRate ? 'md:col-span-2' : 'md:col-span-4'} bg-surface-container-high p-10 rounded-[2rem]`}>
+              <div className={`col-span-2 ${player.winRate ? 'md:col-span-2' : 'md:col-span-4'} bg-surface-container-high p-6 md:p-10 rounded-[2rem]`}>
                 <h3 className="font-body text-sm font-bold uppercase tracking-widest mb-8 opacity-60">Recent Results</h3>
                 <div className="space-y-6">
                   {recentResults.slice(0, 3).map((result, i) => (
@@ -218,29 +218,29 @@ export default async function PlayerPage({ params }: Props) {
 
             {/* Secondary stats */}
             {player.matchesPlayed != null && (
-              <div className="bg-surface-container p-8 rounded-[2rem] text-center">
+              <div className="bg-surface-container p-5 md:p-8 rounded-[2rem] text-center">
                 <p className="font-body text-xs uppercase tracking-widest font-bold opacity-60 mb-2">Matches Played</p>
-                <p className="font-headline text-5xl font-black">{player.matchesPlayed}</p>
+                <p className="font-headline text-4xl md:text-5xl font-black">{player.matchesPlayed}</p>
               </div>
             )}
             {player.smashPower != null && (
-              <div className="bg-surface-container p-8 rounded-[2rem] text-center">
+              <div className="bg-surface-container p-5 md:p-8 rounded-[2rem] text-center">
                 <p className="font-body text-xs uppercase tracking-widest font-bold opacity-60 mb-2">Smash Power</p>
-                <p className="font-headline text-5xl font-black text-secondary">
+                <p className="font-headline text-4xl md:text-5xl font-black text-secondary">
                   {player.smashPower}<span className="text-xl">km/h</span>
                 </p>
               </div>
             )}
             {player.titles != null && (
-              <div className="bg-surface-container p-8 rounded-[2rem] text-center border-2 border-tertiary">
+              <div className="bg-tertiary-container p-5 md:p-8 rounded-[2rem] text-center">
                 <p className="font-body text-xs uppercase tracking-widest font-bold opacity-60 mb-2">Titles</p>
-                <p className="font-headline text-5xl font-black">{player.titles}</p>
+                <p className="font-headline text-4xl md:text-5xl font-black text-on-tertiary-container">{player.titles}</p>
               </div>
             )}
             {player.isClubMvp && (
-              <div className="bg-surface-container p-8 rounded-[2rem] text-center">
+              <div className="bg-surface-container p-5 md:p-8 rounded-[2rem] text-center">
                 <p className="font-body text-xs uppercase tracking-widest font-bold opacity-60 mb-2">Club MVP</p>
-                <p className="text-5xl">⭐</p>
+                <p className="text-4xl md:text-5xl">⭐</p>
               </div>
             )}
           </div>
@@ -249,8 +249,8 @@ export default async function PlayerPage({ params }: Props) {
 
       {/* ── FEATURED INTERVIEW & CLIPS ── */}
       {featuredInterview && (
-        <section className="mb-24">
-          <div className="max-w-[1440px] mx-auto px-8">
+        <section className="mb-12 md:mb-24">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8">
             <div className="bg-primary/5 rounded-[2rem] p-8 md:p-12">
               <div className="flex flex-col lg:flex-row gap-12 items-center">
 
@@ -312,7 +312,7 @@ export default async function PlayerPage({ params }: Props) {
                       <Link
                         key={clip.slug.current}
                         href={`/interviews/${clip.slug.current}`}
-                        className="min-w-[280px] md:min-w-[320px] snap-start group cursor-pointer flex-shrink-0"
+                        className="min-w-[240px] sm:min-w-[280px] md:min-w-[320px] snap-start group cursor-pointer flex-shrink-0"
                       >
                         <div className="aspect-video rounded-[1.5rem] overflow-hidden relative mb-4 bg-surface-container-high">
                           {clip.coverImage ? (
@@ -343,14 +343,14 @@ export default async function PlayerPage({ params }: Props) {
 
       {/* ── THE ISLAND MINDSET Q&A ── */}
       {hasIslandMindset && (
-        <section className="bg-surface-container-lowest py-24 mb-24 overflow-hidden">
-          <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <section className="bg-surface-container-lowest py-12 md:py-20 lg:py-24 mb-12 md:mb-24 overflow-hidden">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 lg:gap-20 items-center">
             <div className="relative">
-              <div className="absolute -top-10 -left-10 text-[12rem] font-black text-surface-container-high select-none leading-none z-0 font-headline">
+              <div className="absolute -top-6 -left-4 md:-top-10 md:-left-10 text-[6rem] md:text-[12rem] font-black text-surface-container-high select-none leading-none z-0 font-headline">
                 &ldquo;
               </div>
               <div className="relative z-10">
-                <h2 className="font-headline text-5xl md:text-6xl font-black tracking-tighter mb-10">
+                <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-10">
                   THE ISLAND<br />MINDSET
                 </h2>
                 <div className="space-y-8">
@@ -390,13 +390,13 @@ export default async function PlayerPage({ params }: Props) {
 
       {/* ── OFF THE COURT ── */}
       {offTheCourt.length > 0 && (
-        <section className="px-8 max-w-[1440px] mx-auto mb-24">
+        <section className="px-4 sm:px-6 md:px-8 max-w-[1440px] mx-auto mb-12 md:mb-24">
           <h3 className="font-body text-sm font-bold uppercase tracking-widest mb-12 opacity-60">Off the Court</h3>
           <div className="flex flex-col md:flex-row gap-8">
             {offTheCourt.map(({ key, label, icon, value }, index) => (
               <div
                 key={key}
-                className={`flex-1 bg-surface-container-low p-10 rounded-[2rem] ${index === 1 ? 'mt-0 md:mt-12' : ''}`}
+                className={`flex-1 bg-surface-container-low p-6 md:p-10 rounded-[2rem] ${index === 1 ? 'mt-0 md:mt-12' : ''}`}
               >
                 <span className="text-4xl mb-4 block">{icon}</span>
                 <h4 className="font-headline font-bold text-2xl mb-4">{label}</h4>
@@ -409,8 +409,8 @@ export default async function PlayerPage({ params }: Props) {
 
       {/* ── IN MY BAG ── */}
       {inMyBag.length > 0 && (
-        <section className="px-8 max-w-[1440px] mx-auto">
-          <div className="bg-surface-container-highest rounded-[2rem] p-12 md:p-20 overflow-hidden relative">
+        <section className="px-4 sm:px-6 md:px-8 max-w-[1440px] mx-auto">
+          <div className="bg-surface-container-highest rounded-[2rem] p-6 md:p-12 lg:p-20 overflow-hidden relative">
             <div className="relative z-10">
               <h2 className="font-headline text-5xl font-black tracking-tighter mb-16">IN MY BAG</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -462,7 +462,7 @@ export default async function PlayerPage({ params }: Props) {
 
               {/* Official Partners strip */}
               {partners.length > 0 && (
-                <div className="mt-20 pt-10 border-t border-outline-variant/30 flex flex-wrap items-center gap-12">
+                <div className="mt-20 pt-10 border-t border-outline-variant/30 flex flex-wrap items-center gap-6 md:gap-12">
                   <p className="font-body text-xs font-black uppercase tracking-[0.4em] text-on-surface-variant/40">Official Partners</p>
                   {partners.map(({ name, url }) =>
                     url ? (

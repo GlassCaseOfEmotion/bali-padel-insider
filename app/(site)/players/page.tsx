@@ -29,12 +29,12 @@ export default async function PlayersPage() {
       {/* ── HERO ── */}
       <header className="relative w-full min-h-[480px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-surface-container-low via-surface to-surface-container" />
-        <div className="relative z-10 max-w-[1440px] mx-auto px-8 w-full py-20">
+        <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 w-full py-20">
           <div className="max-w-2xl">
             <span className="bg-tertiary text-on-tertiary px-4 py-1.5 rounded-full font-body text-xs font-bold uppercase tracking-widest mb-6 inline-block">
               Member Directory
             </span>
-            <h1 className="font-headline text-6xl md:text-8xl font-black text-on-surface tracking-tighter leading-[0.9] mb-6">
+            <h1 className="font-headline text-4xl sm:text-6xl md:text-8xl font-black text-on-surface tracking-tighter leading-[0.9] mb-6">
               Meet the<br /><span className="text-primary italic">Island Legends</span>
             </h1>
             <p className="font-body text-lg md:text-xl text-on-surface/80 font-medium max-w-lg leading-relaxed">
@@ -58,7 +58,7 @@ export default async function PlayersPage() {
                 <Link
                   key={player.slug.current}
                   href={`/players/${player.slug.current}`}
-                  className="flex-none w-[280px] bg-surface rounded-[2rem] p-6 shadow-sm hover:shadow-xl transition-all group hover:scale-[1.02] duration-300"
+                  className="flex-none w-[240px] sm:w-[280px] bg-surface rounded-[2rem] p-6 shadow-sm hover:shadow-xl transition-all group hover:scale-[1.02] duration-300"
                 >
                   <div className="relative mb-6 rounded-[1.5rem] overflow-hidden h-[320px]">
                     {player.photo ? (

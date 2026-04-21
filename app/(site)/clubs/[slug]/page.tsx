@@ -63,14 +63,14 @@ export default async function ClubPage({ params }: Props) {
           <div className="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent" />
 
           {/* Bottom overlay: name + actions */}
-          <div className="absolute bottom-12 left-12 right-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="absolute bottom-6 left-6 right-6 md:bottom-12 md:left-12 md:right-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <span className="bg-tertiary text-on-tertiary px-4 py-1 rounded-full font-body text-xs font-bold uppercase tracking-widest">
                   Bali Padel Club
                 </span>
               </div>
-              <h1 className="font-headline text-5xl md:text-7xl font-black text-white leading-none tracking-tighter">
+              <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white leading-none tracking-tighter">
                 {club.name}
               </h1>
               {club.location?.address && (

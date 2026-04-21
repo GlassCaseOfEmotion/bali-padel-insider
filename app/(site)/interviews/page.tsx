@@ -51,12 +51,12 @@ export default async function InterviewsPage() {
                 <span className="text-4xl font-black ml-1">▶</span>
               </div>
             </Link>
-            <div className="absolute bottom-12 left-12 z-20 max-w-2xl">
+            <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 z-20 max-w-2xl">
               <div className="inline-flex items-center gap-2 bg-tertiary-fixed text-on-tertiary-fixed px-4 py-1.5 rounded-full font-headline font-bold text-xs uppercase tracking-widest mb-4">
                 <span className="w-2 h-2 rounded-full bg-on-tertiary-fixed animate-pulse" />
                 Featured Interview
               </div>
-              <h1 className="font-headline text-6xl font-black text-white leading-tight tracking-tighter mb-4">
+              <h1 className="font-headline text-3xl sm:text-5xl md:text-6xl font-black text-white leading-tight tracking-tighter mb-4">
                 {featuredInterview.title}
               </h1>
               {featuredInterview.subject && (
@@ -87,7 +87,7 @@ export default async function InterviewsPage() {
             <div className="flex items-end justify-between mb-12">
               <div>
                 <span className="font-body text-secondary font-bold uppercase tracking-[0.2em] text-xs">Behind the Racket</span>
-                <h2 className="font-headline text-5xl font-black tracking-tighter mt-2">Player Perspectives</h2>
+                <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter mt-2">Player Perspectives</h2>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -139,9 +139,9 @@ export default async function InterviewsPage() {
 
       {/* ── CTA ── */}
       <section className="px-8 py-24">
-        <div className="max-w-[1700px] mx-auto bg-primary rounded-[2rem] p-16 relative overflow-hidden flex flex-col md:flex-row items-center gap-16">
+        <div className="max-w-[1700px] mx-auto bg-primary rounded-[2rem] p-8 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 md:gap-16">
           <div className="z-10 flex-1">
-            <h2 className="font-headline text-5xl font-black text-white tracking-tighter leading-tight mb-6">
+            <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tighter leading-tight mb-6">
               Never Miss a <br />Match Point.
             </h2>
             <p className="font-body text-on-primary/80 text-xl font-medium mb-8 max-w-md">

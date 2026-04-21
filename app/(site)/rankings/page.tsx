@@ -40,7 +40,7 @@ export default async function RankingsPage({ searchParams }: Props) {
         <div className="inline-block px-4 py-1 bg-tertiary-container text-on-tertiary-container rounded-full font-body text-xs font-bold tracking-widest uppercase mb-4">
           Global Standing
         </div>
-        <h1 className="font-headline text-5xl md:text-7xl font-black tracking-tighter text-on-surface leading-none mb-6">
+        <h1 className="font-headline text-3xl sm:text-5xl md:text-7xl font-black tracking-tighter text-on-surface leading-none mb-6">
           {"Bali's Padel"} <br /><span className="text-primary italic">Elite Tier.</span>
         </h1>
         <p className="font-body text-on-surface-variant max-w-xl text-lg font-medium leading-relaxed">
@@ -209,7 +209,7 @@ export default async function RankingsPage({ searchParams }: Props) {
 
       {/* ── CTA ── */}
       <section className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="col-span-1 md:col-span-2 relative overflow-hidden rounded-[2rem] min-h-[320px] flex items-end p-12 bg-inverse-surface">
+        <div className="col-span-1 md:col-span-2 relative overflow-hidden rounded-[2rem] min-h-[320px] flex items-end p-8 md:p-12 bg-inverse-surface">
           <div className="relative z-20 text-white">
             <h4 className="font-headline text-3xl font-black mb-4">Want to Join the Rankings?</h4>
             <p className="font-body mb-8 opacity-80 max-w-md">Register for our upcoming Open Season. Test your mettle against Bali's finest and climb the leaderboard.</p>
@@ -218,7 +218,7 @@ export default async function RankingsPage({ searchParams }: Props) {
             </Link>
           </div>
         </div>
-        <div className="col-span-1 bg-secondary-container p-12 rounded-[2rem] flex flex-col justify-between">
+        <div className="col-span-1 bg-secondary-container p-8 md:p-12 rounded-[2rem] flex flex-col justify-between">
           <div>
             <h4 className="font-headline text-3xl font-black text-on-secondary-container leading-tight">Player Directory</h4>
           </div>

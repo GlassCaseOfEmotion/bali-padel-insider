@@ -36,7 +36,7 @@ export default async function ArticlePage({ params }: Props) {
   return (
     <main>
       {/* ── HERO: two-column layout — text left, image right ── */}
-      <section className="relative min-h-[600px] flex flex-col items-center justify-center px-8 overflow-hidden bg-surface py-20">
+      <section className="relative min-h-[600px] flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 overflow-hidden bg-surface py-10 md:py-16 lg:py-20">
         <div className="max-w-[1440px] w-full grid md:grid-cols-2 gap-12 items-center mx-auto">
 
           {/* Left: text */}
@@ -46,7 +46,7 @@ export default async function ArticlePage({ params }: Props) {
                 {article.category}
               </span>
             )}
-            <h1 className="font-headline text-5xl md:text-7xl font-black text-primary leading-[0.9] tracking-tighter mb-8">
+            <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-primary leading-[0.9] tracking-tighter mb-8">
               {article.title}
             </h1>
             {article.excerpt && (
@@ -79,8 +79,8 @@ export default async function ArticlePage({ params }: Props) {
       </section>
 
       {/* ── ARTICLE BODY ── */}
-      <div className="max-w-[1440px] mx-auto px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 py-16">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 py-10 md:py-16">
 
           {/* Main editorial content */}
           <div className="lg:col-span-8">
