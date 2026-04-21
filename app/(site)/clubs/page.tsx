@@ -1,5 +1,4 @@
-import { client } from '@/sanity/lib/client'
-import { allClubsQuery } from '@/sanity/lib/queries'
+import { fetchAllClubs } from '@/sanity/lib/fetch'
 import { ClubCard } from '@/components/cards/ClubCard'
 import type { Metadata } from 'next'
 
@@ -7,7 +6,7 @@ export const metadata: Metadata = { title: 'Clubs' }
 export const revalidate = 60
 
 export default async function ClubsPage() {
-  const clubs = await client.fetch(allClubsQuery)
+  const clubs = await fetchAllClubs()
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

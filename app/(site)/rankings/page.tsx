@@ -1,5 +1,4 @@
-import { client } from '@/sanity/lib/client'
-import { rankingByCategoryQuery } from '@/sanity/lib/queries'
+import { fetchRankingByCategory } from '@/sanity/lib/fetch'
 import { urlFor } from '@/sanity/lib/urlFor'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -23,7 +22,7 @@ export default async function RankingsPage({ searchParams }: Props) {
   const { category: categoryParam } = await searchParams
   const activeCategory = CATEGORIES.find((c) => c.key === categoryParam)?.key ?? 'men'
 
-  const ranking = await client.fetch(rankingByCategoryQuery, { category: activeCategory })
+  const ranking = await fetchRankingByCategory(activeCategory)
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
