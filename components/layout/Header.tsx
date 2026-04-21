@@ -29,17 +29,17 @@ export function Header() {
           </Link>
 
           {/* Nav — absolutely centred */}
-          <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1">
+          <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
             {NAV_LINKS.map(({ href, label }) => {
               const active = pathname.startsWith(href)
               return (
                 <Link
                   key={href}
                   href={href}
-                  className={`font-display text-sm font-bold uppercase tracking-tight px-4 py-2 rounded-[0.75rem] transition-all ${
+                  className={`font-display text-sm font-bold uppercase tracking-tight pb-1 transition-colors ${
                     active
-                      ? 'bg-primary text-on-primary'
-                      : 'text-on-surface-muted hover:text-on-surface hover:bg-surface-container'
+                      ? 'text-primary border-b-2 border-primary'
+                      : 'text-on-surface-muted hover:text-on-surface border-b-2 border-transparent'
                   }`}
                 >
                   {label}
@@ -51,7 +51,7 @@ export function Header() {
           {/* Join Club CTA — right */}
           <button
             type="button"
-            className="hidden md:flex ml-auto items-center gap-2 bg-tertiary-container text-on-tertiary-container font-display font-bold text-sm uppercase tracking-widest px-5 py-2 rounded-[3rem] hover:brightness-95 transition-all shrink-0"
+            className="hidden md:flex ml-auto items-center bg-primary text-on-primary font-display font-bold text-sm uppercase tracking-widest px-6 py-2.5 rounded-full hover:bg-primary-dim transition-colors shrink-0"
           >
             Join Club
           </button>
