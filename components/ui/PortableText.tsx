@@ -7,7 +7,12 @@ interface Props {
 
 export function PortableText({ value }: Props) {
   return (
-    <div className="prose max-w-none font-body text-on-surface [&_h1]:font-display [&_h2]:font-display [&_h3]:font-display [&_a]:text-primary [&_a]:no-underline [&_a:hover]:underline">
+    <div className="prose prose-lg max-w-none font-body
+      prose-headings:font-display prose-headings:text-on-surface
+      prose-p:text-on-surface prose-p:leading-relaxed
+      prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+      prose-strong:text-on-surface prose-li:text-on-surface
+      prose-h1:tracking-[-0.02em] prose-h2:tracking-[-0.02em] prose-h3:tracking-[-0.02em]">
       <SanityPortableText value={value} />
     </div>
   )
